@@ -8,7 +8,4 @@ def decode(password):
         else:
             decoded += str(int(password[index]) - 3)
             # list.append(int(password[index]) + 3)
-    print(decoded)
     return decoded
-
-decode('45678888')

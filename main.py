@@ -1,16 +1,28 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from DEL_decode import decode
+from DEL_Encode import encode
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def main():
+    while True:
+        print('Menu')
+        print('-------------')
+        print('1. Encode')
+        print('2. Decode')
+        print('3. Quit')
+
+        op = input('Please enter an option: ')
+
+        if op == '1':
+            password = input('Please enter a password to encode: ')
+            encode(password)
+            print('Your password has been encoded and stored!')
+            print('')
+        elif op == '2':
+            print(f"The encoded password is {decode(password)}, and the original password is {password}")
+            print('')
+        elif op == '3':
+            break
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    main()
