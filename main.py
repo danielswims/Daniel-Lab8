@@ -1,7 +1,3 @@
-from DEL_decode import decode
-from DEL_Encode import encode
-
-
 def main():
     while True:
         print('Menu')
@@ -22,6 +18,18 @@ def main():
             print('')
         elif op == '3':
             break
+
+
+def encode(password):
+    encoded = ''
+    for index, num in enumerate(password):
+        if int(num) + 3 >= 10:
+            encoded += str(int(password[index]) + 3 - 10)
+            # list.append(int(password[index]) + 3 - 10)
+        else:
+            encoded += str(int(password[index]) + 3)
+            # list.append(int(password[index]) + 3)
+    return encoded
 
 
 if __name__ == '__main__':
