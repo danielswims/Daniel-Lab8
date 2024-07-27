@@ -1,3 +1,21 @@
+def encode(password):
+    encoded = ''
+    for index, num in enumerate(password):
+        if int(num) + 3 >= 10:
+            encoded += str(int(password[index]) + 3 - 10)
+            # list.append(int(password[index]) + 3 - 10)
+        else:
+            encoded += str(int(password[index]) + 3)
+            # list.append(int(password[index]) + 3)
+    return encoded
+
+def decode(password):
+    decoded = ''
+    for digit in password:
+        digit = (int(digit) + 7) % 10
+        decoded += str(digit)
+    return decoded
+
 def main():
     while True:
         print('Menu')
@@ -14,22 +32,11 @@ def main():
             print('Your password has been encoded and stored!')
             print('')
         elif op == '2':
-            print(f"The encoded password is {decode(password)}, and the original password is {password}")
+            print(f"The encoded password is {encode(password)}, and the original password is {password}")
             print('')
         elif op == '3':
             break
 
-
-def encode(password):
-    encoded = ''
-    for index, num in enumerate(password):
-        if int(num) + 3 >= 10:
-            encoded += str(int(password[index]) + 3 - 10)
-            # list.append(int(password[index]) + 3 - 10)
-        else:
-            encoded += str(int(password[index]) + 3)
-            # list.append(int(password[index]) + 3)
-    return encoded
 
 
 if __name__ == '__main__':
